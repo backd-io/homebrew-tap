@@ -5,25 +5,25 @@
 class Cfd < Formula
   desc "Easy certificate management for development environments"
   homepage "https://www.certsfor.dev/"
-  version "0.2.2"
+  version "0.2.3"
   license "MIT"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.2/cfd_0.2.2_Darwin_x86_64.tar.gz"
-    sha256 "e789996fb0599a42a2fe22b29e13466241360f1415ee6dc99cd156ea8b67fa26"
+    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.3/cfd_0.2.3_Darwin_x86_64.tar.gz"
+    sha256 "8c6c5e34f54a105dc38c762b8bb4bd2b0f2439b0356413ae6b1cffc0fd863ade"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.2/cfd_0.2.2_Linux_x86_64.tar.gz"
-    sha256 "2dd0731cabe8d7f589ac97012d21dd157d9cfd1753cf87f5b3756bb2a611a744"
+    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.3/cfd_0.2.3_Linux_x86_64.tar.gz"
+    sha256 "f773f3bc11217a03f2e309acccce7191b72cde3c824c455a99e43e7c11e0d1c9"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.2/cfd_0.2.2_Linux_armv6.tar.gz"
-    sha256 "762de3078feceac43cc2538702e7f3661da7cd39998f41f1e582150dcff0addb"
+    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.3/cfd_0.2.3_Linux_armv6.tar.gz"
+    sha256 "a15f982ac2cf1f14115363f6bd6c5d61991aac27f4d892b051e3ad766174b3cd"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.2/cfd_0.2.2_Linux_arm64.tar.gz"
-    sha256 "0877297606f3c2a3406c34f3282c2f4d7e56ee6ff42168db3f0fb01351e5dd10"
+    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.3/cfd_0.2.3_Linux_arm64.tar.gz"
+    sha256 "1bd028997aeaa1842a94252325ba569966c42fa26784ad07662a825b1d17bb04"
   end
 
   def install
