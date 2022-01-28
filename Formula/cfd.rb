@@ -5,29 +5,53 @@
 class Cfd < Formula
   desc "Easy certificate management for development environments"
   homepage "https://www.certsfor.dev/"
-  version "0.2.3"
+  version "0.2.4"
   license "MIT"
-  bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.3/cfd_0.2.3_Darwin_x86_64.tar.gz"
-    sha256 "8c6c5e34f54a105dc38c762b8bb4bd2b0f2439b0356413ae6b1cffc0fd863ade"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.3/cfd_0.2.3_Linux_x86_64.tar.gz"
-    sha256 "f773f3bc11217a03f2e309acccce7191b72cde3c824c455a99e43e7c11e0d1c9"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.3/cfd_0.2.3_Linux_armv6.tar.gz"
-    sha256 "a15f982ac2cf1f14115363f6bd6c5d61991aac27f4d892b051e3ad766174b3cd"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.3/cfd_0.2.3_Linux_arm64.tar.gz"
-    sha256 "1bd028997aeaa1842a94252325ba569966c42fa26784ad07662a825b1d17bb04"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.4/cfd_0.2.4_Darwin_x86_64.tar.gz"
+      sha256 "3cd2562571d71a918b94ed0c14aa3f27ee2161f392d0d03179a6ddd58dd99266"
+
+      def install
+        bin.install "cfd"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.4/cfd_0.2.4_Darwin_arm64.tar.gz"
+      sha256 "23d661c901e0392302265185b6aad06e157855da408c2a88edd2e8714e07d120"
+
+      def install
+        bin.install "cfd"
+      end
+    end
   end
 
-  def install
-    bin.install "cfd"
+  on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.4/cfd_0.2.4_Linux_armv6.tar.gz"
+      sha256 "f2fdbf3617e69c694f442bb73efdc12a03c704151e0e8b666ed81c272165a3d2"
+
+      def install
+        bin.install "cfd"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.4/cfd_0.2.4_Linux_x86_64.tar.gz"
+      sha256 "a8c358df15ec70164035ae251467b0b3b600092315ca2ff5b3d1498ddb7d5279"
+
+      def install
+        bin.install "cfd"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/fernandezvara/certsfor/releases/download/v0.2.4/cfd_0.2.4_Linux_arm64.tar.gz"
+      sha256 "7697e61a73cc0702b2ccf705a22e8548ab6beee33c37b7a0b5453b568069b696"
+
+      def install
+        bin.install "cfd"
+      end
+    end
   end
 
   test do
